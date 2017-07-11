@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="opp">
+		<button @click="reverseMessage">reverse</button>
+		<input type="text" v-model="message">
+		<div>{{message}}</div>
+		<div>{{reverseMessage1}}</div>
+	</div>
+	<script>
+		
+		var opp = new Vue({
+			el:'#opp',
+			data:{
+				message:'i love you!'
+			},
+			methods:{
+				reverseMessage: function(){
+					this.message = this.message.split('').reverse().join('');
+				}
+			},
+			computed:{
+				reverseMessage1: function(){
+					return this.message.split('').reverse().join('');
+				}
+			}
+		})
+	</script>
+</body>
+</html>

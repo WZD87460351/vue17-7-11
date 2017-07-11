@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue</title>
+	<style>
+		.box{
+			height: 100px;
+			width: 100px;
+			background: #888;
+		}
+		.active{
+			background: green;
+		}
+	</style>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="number" v-model='message'>
+		<div class="box" v-bind:class="{active:this.message >=19}" v-if='message > 5? true:false'></div>
+		<hr>
+		<button v-on:click='a = !a'>click</button>
+		<div class="box" v-if='a'></div>
+	</div>
+	<script>
+		let app = new Vue({
+			el:'#app',
+			data:{
+				a:1,
+				message:0
+			},
+			methods:{
+				add:function(){
+//					if(this.a == 0){
+//						this.a = 1
+//					}else{
+//						this.a = 0
+//					}
+						
+				}
+			}
+			
+		})
+		
+	</script>
+</body>
+</html>

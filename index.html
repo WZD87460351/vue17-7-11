@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p v-bind:title="a"> {{a}} </p>
+		<input type="text" v-model='a'>
+		<input type="text" v-model='a'>
+		<div id="box">{{a}}</div>
+		
+	</div>
+	<script>
+		let app = new Vue({
+			el:'#app',
+			data:{
+				a:'',
+			}
+		})
+		
+	</script>
+</body>
+</html>

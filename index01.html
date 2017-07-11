@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue</title>
+	<style>
+		.box{
+			height: 100px;
+			width: 100px;
+			background: #eee;
+		}
+	</style>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model='a'>
+		<button @click='add'>click</button>
+		<ul>
+			<li v-for="(item,index) in items">
+				{{index}}-{{item}}
+			</li>
+		</ul>
+	</div>
+	<script>
+		let app = new Vue({
+			el:'#app',
+			data:{
+				a:null,
+				items:[
+					'apple','watermalo','groop','orange'
+				]
+			},
+			methods:{
+				add:function(){
+					console.log(this);
+					this.items.push(this.a)
+				}
+			}
+			
+		})
+		
+	</script>
+</body>
+</html>

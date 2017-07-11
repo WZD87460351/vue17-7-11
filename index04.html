@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="opp">
+		<ul>
+			<ili v-for="(item,index) in items" v-bind:child="item" v-bind:id="index"></ili>
+		</ul>
+	</div>
+	<script>
+		Vue.component('ili',{
+			props:['child','id'],
+			template:'<li><span>{{id}}</span> {{child}}</li>'
+		})
+		var oo = new Vue({
+			el:'#opp',
+			data:{
+				items:[
+					'niu','jjjj','lllll'
+				]
+			}
+		})
+	</script>
+</body>
+</html>
